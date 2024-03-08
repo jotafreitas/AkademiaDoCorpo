@@ -1,2 +1,2 @@
 # AkademiaDoCorpo
-Projeto WEB da 
+Projeto WEB? MOBILE OU DESKTOP? VAI SABER
