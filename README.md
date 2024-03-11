@@ -1,2 +1,2 @@
 # AkademiaDoCorpo
-Projeto WEB? MOBILE OU DESKTOP? VAI SABER
+Projeto WEB? MOBILE OU DESKTOP? OS 3.
