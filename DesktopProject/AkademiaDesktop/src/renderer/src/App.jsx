@@ -1,5 +1,7 @@
 // React
 import { useState } from 'react';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'
 
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,22 +15,43 @@ import logo from './assets/Images/LoginImg.png'
 // Users
 import User from '../../database/User/User'
 
-import Home from './Pages/Home/Home';
 
 function App() {
   const [userEmail, setUserEmail] = useState('')
+  const [userPassword, setUserPassword] = useState('')
   const [loginError, setLoginError] = useState(false)
-  const [loadHome, setLoadHome] = useState(false)
+
+  // Password
+  const [type, setType] = useState('password');
+  const [icon, setIcon] = useState(<FaEyeSlash size={23} color='#FAE00D'/>);
+
+  // Navigate
+
+
+  const handleToggle = () => {
+    if (type==='password'){
+       setIcon(<FaEye size={23} color='#FAE00D'/>);
+       setType('text')
+    } else {
+       setIcon(<FaEyeSlash size={23} color='#FAE00D'/>)
+       setType('password')
+    }
+ }
 
   function VerifyUser(){
     var newUserEmail = userEmail.replace(/[@.]/g, '')
     if(User[newUserEmail]){
-      setLoginError(false)
+      if(User[newUserEmail].password == userPassword){
+        setLoginError(false)
+        useNavigate('/Home', {replace: true})
+      }
+      else{
+        setLoginError(true)
+      }
     }
     else{
       setLoginError(true)
     }
-    // console.log(document.querySelector('#email').value)
   }
 
   return (
@@ -47,11 +70,10 @@ function App() {
                       borderRadius: 16,
                       boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
                       backdropFilter: 'blur(13.1px)',
-                      WebkitBackdropFilter: 'blur(13.1px)',
-                      
+                      WebkitBackdropFilter: 'blur(13.1px)',        
                   }}>Login ou Senha Incorretos</h5>
                 </div>
-                <input className='w-100 mt-4' type="email" style={
+                <input className='w-100 mt-4' type="email" placeholder='E-mail' style={
                   {
                     border: 'none',
                     background: 'none',
@@ -61,8 +83,8 @@ function App() {
                     borderRadius: '0',
                     outline: 'none' }} onChange={e => setUserEmail(e.target.value)}/>
               </div>
-              <div>
-                <input className='w-100 mt-5' type="password" style={
+              <div className='d-flex'>
+                <input className='w-100 mt-5' type={type} placeholder='Senha' style={
                   {
                     border: 'none',
                     background: 'none',
@@ -70,11 +92,14 @@ function App() {
                     borderBottom: loginError ? '1px solid rgba(255, 0, 0, 0.30)': '1px solid #fff',
                     color: '#fff',
                     borderRadius: '0',
-                    outline: 'none' }}/>
+                    outline: 'none' }} onChange={e => setUserPassword(e.target.value)}/>
+                    <span class="d-flex justify-content-around align-items-center" onClick={handleToggle}>
+                      <p class="position-absolute me-5 mt-5">{icon}</p>
+                    </span>
               </div>
               <div className='d-flex justify-content-center align-items-center mt-5'>
                 <Button type='submit' variant='dark' onClick={VerifyUser}>
-                  "Entrar"
+                  Entrar
                 </Button>
               </div>
             </Form:post>
