@@ -48,7 +48,7 @@ function ForgotPassword() {
               </div>
               <div><a href="/src/Pages/Home/Home.jsx">Esqueceu a senha?</a></div>
               <div className='d-flex justify-content-center align-items-center mt-5'>
-                <Button type='submit' variant='dark'>
+                <Button type='submit' variant='dark' >
                   Entrar
                 </Button>
 

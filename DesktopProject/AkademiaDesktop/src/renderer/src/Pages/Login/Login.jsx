@@ -100,13 +100,10 @@ function Login() {
                       <p class="position-absolute me-5 mt-5">{icon}</p>
                     </span>
               </div>
-              <div><a href="/src/Pages/Home/Home.jsx">Esqueceu a senha?</a></div>
+              <div className='text-end mt-2'><a href="#" onClick={forgotPassword} className='text-light'>Esqueceu a senha?</a></div>
               <div className='d-flex justify-content-center align-items-center mt-5'>
                 <Button type='submit' variant='dark' onClick={VerifyUser}>
                   Entrar
-                </Button>
-                <Button type='submit' variant='dark' onClick={forgotPassword}>
-                  Esqueceu
                 </Button>
               </div>
             </Form:post>
