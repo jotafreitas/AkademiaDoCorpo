@@ -15,7 +15,7 @@ import logo from '../../assets/Images/LoginImg.png'
 import User from '../../../../database/User/User'
 
 
-function Login() {
+function HomeAdm() {
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const [loginError, setLoginError] = useState(false)
@@ -40,16 +40,13 @@ function Login() {
     const forgotPassword = () => {
         return navigate("forgotPassword")
     }
-    const home = () => {
-      return navigate("homeAdm")
-  }                
-
+                    
   function VerifyUser(){
     var newUserEmail = userEmail.replace(/[@.]/g, '')
     if(User[newUserEmail]){
       if(User[newUserEmail].password == userPassword){
         setLoginError(false)
-        home()
+        useNavigate('/Home', {replace: true})
       }
       else{
         setLoginError(true)
@@ -103,7 +100,7 @@ function Login() {
                       <p class="position-absolute me-5 mt-5">{icon}</p>
                     </span>
               </div>
-              <div className='text-end mt-2'><a href="#" onClick={forgotPassword} className='text-light'>Esqueceu a senha?</a></div>
+              <div className='text-end mt-2'><a href="#" onClick={forgotPassword} className='text-light'>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA?</a></div>
               <div className='d-flex justify-content-center align-items-center mt-5'>
                 <Button type='submit' variant='dark' onClick={VerifyUser}>
                   Entrar
@@ -117,5 +114,5 @@ function Login() {
   )
 }
 
-export default Login
+export default HomeAdm
 
