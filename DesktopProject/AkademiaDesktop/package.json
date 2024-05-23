@@ -1,5 +1,5 @@
 {
-  "name": "desktopakademia",
+  "name": "akademiadesktop",
   "version": "1.0.0",
   "description": "An Electron application with React",
   "main": "./out/main/index.js",
@@ -20,8 +20,10 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "react-bootstrap": "^2.10.2",
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^1.0.2",
@@ -35,7 +37,6 @@
     "prettier": "^3.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.77.2",
-    "vite": "^5.2.11"
+    "vite": "^5.0.12"
   }
 }

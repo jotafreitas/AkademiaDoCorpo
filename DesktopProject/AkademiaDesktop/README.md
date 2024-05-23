@@ -1,4 +1,4 @@
-# desktopakademia
+# akademiadesktop
 
 An Electron application with React
 

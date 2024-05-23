@@ -1,5 +1,5 @@
 appId: com.electron.app
-productName: desktopakademia
+productName: akademiadesktop
 directories:
   buildResources: build
 files:
@@ -11,7 +11,7 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: desktopakademia
+  executableName: akademiadesktop
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
