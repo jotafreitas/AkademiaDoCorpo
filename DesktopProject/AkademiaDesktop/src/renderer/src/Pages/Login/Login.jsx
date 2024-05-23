@@ -15,6 +15,8 @@ import logo from '../../assets/Images/LoginImg.png'
 import User from '../../../../database/User/User'
 
 
+
+
 function Login() {
   const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
@@ -63,19 +65,22 @@ function Login() {
         <div className='w-100 bg-black' style={{height:"100vh"}}>
             <Image src={logo} fluid={true} className='w-100 vh-100' style={{height:"100vh"}}/>
         </div>
-        <div className='w-100 bg-black' style={{height:"100vh"}}>
+        <div className='w-100' style={{height:"100vh", backgroundColor: "#08090B"}}>
           <div className="container d-flex justify-content-center align-items-center" style={{height:"100vh"}}>
             <Form:post className='w-75'>
+              <div className='text-light w-100' >
+                <h1 className='w-100'>Login</h1>
+              </div>
+              <div style={{display: loginError ? 'block':'none'}}>
+                <h5 className="text-light text-center rounded py-2" style={{
+                    background: 'rgba(255, 0, 0, 0.30)',
+                    borderRadius: 16,
+                    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+                    backdropFilter: 'blur(13.1px)',
+                    WebkitBackdropFilter: 'blur(13.1px)',        
+                }}>Login ou Senha Incorretos</h5>
+              </div>
               <div>
-                <div style={{display: loginError ? 'block':'none'}}>
-                  <h5 className="text-light text-center rounded py-2" style={{
-                      background: 'rgba(255, 0, 0, 0.30)',
-                      borderRadius: 16,
-                      boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-                      backdropFilter: 'blur(13.1px)',
-                      WebkitBackdropFilter: 'blur(13.1px)',        
-                  }}>Login ou Senha Incorretos</h5>
-                </div>
                 <input className='w-100 mt-4' type="email" placeholder='E-mail' style={
                   {
                     border: 'none',
