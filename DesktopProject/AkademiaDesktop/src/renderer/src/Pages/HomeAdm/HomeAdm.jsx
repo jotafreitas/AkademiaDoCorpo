@@ -1,6 +1,6 @@
 // React
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,10 +15,10 @@ function HomeAdm(){
   
 
     return (
+      
         <>
-        <Button type='submit' variant='dark'>
-        TELA ADM
-      </Button>
+      
+      <Link to="/" relative="path"> Back </Link>
          
         </>
     )
