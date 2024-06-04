@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, ListGroup, Button, Modal } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import '../AlunosCadastrados/style.css';
 
 function AlunosCadastrados() {
+    const navigate = useNavigate();
+
     // Estado para armazenar os alunos
     const [alunos, setAlunos] = useState([
         { id: 1, nome: 'João Silva' },
@@ -35,6 +38,11 @@ function AlunosCadastrados() {
     return (
         <div className="bg-gradient">
             <Container className="pt-4 pb-4">
+                <Row className="mb-4">
+                    <Col>
+                        <Button variant="secondary" onClick={() => navigate(-1)}>Back</Button>
+                    </Col>
+                </Row>
                 <Row className="mb-4">
                     <Col>
                         <h1 className="text-center">Alunos Cadastrados</h1>
@@ -71,4 +79,4 @@ function AlunosCadastrados() {
     );
 }
 
-export default AlunosCadastrados
+export default AlunosCadastrados;
