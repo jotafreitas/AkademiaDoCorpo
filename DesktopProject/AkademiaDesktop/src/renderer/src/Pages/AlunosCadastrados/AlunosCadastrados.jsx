@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, ListGroup, Button, Modal, Form } from 'react-bootstrap';
+import { Container, Row, Col, ListGroup, Button, Modal, Form, InputGroup, FormControl } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import '../AlunosCadastrados/style.css';
 
@@ -19,6 +19,7 @@ function AlunosCadastrados() {
     const [showEditModal, setShowEditModal] = useState(false);
     const [alunoToDelete, setAlunoToDelete] = useState(null);
     const [currentAluno, setCurrentAluno] = useState({ id: '', nome: '', vencimento: '' });
+    const [searchTerm, setSearchTerm] = useState('');
 
     // Função para editar aluno
     const handleEdit = (aluno) => {
@@ -57,12 +58,17 @@ function AlunosCadastrados() {
         setShowEditModal(false);
     };
 
+    // Filtrar alunos com base no termo de pesquisa
+    const filteredAlunos = alunos.filter(aluno =>
+        aluno.nome.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <div className="bg-gradient">
             <Container className="pt-4 pb-4">
                 <Row className="mb-4">
                     <Col>
-                        <Button variant="secondary" onClick={() => navigate(-1)}>Back</Button>
+                        <Button variant="danger" onClick={() => navigate(-1)}>Back</Button>
                     </Col>
                 </Row>
                 <Row className="mb-4">
@@ -71,14 +77,23 @@ function AlunosCadastrados() {
                     </Col>
                 </Row>
                 <Row className="mb-4">
-                    <Col className="text-end">
+                    <Col md={9}>
+                        <InputGroup>
+                            <FormControl
+                                placeholder="Pesquisar aluno"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                        </InputGroup>
+                    </Col>
+                    <Col md={3} className="text-end">
                         <Button variant="warning" onClick={handleAddAluno}>Novo Aluno</Button>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <ListGroup>
-                            {alunos.map(aluno => (
+                            {filteredAlunos.map(aluno => (
                                 <ListGroup.Item key={aluno.id} className="d-flex justify-content-between align-items-center">
                                     <div>
                                         {aluno.nome} - <small>Vencimento: {aluno.vencimento}</small>
