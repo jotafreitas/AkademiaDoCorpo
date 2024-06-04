@@ -1,16 +1,14 @@
 // React
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'
 
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
 // Custom CSS
-import '../../../../renderer/src/Pages/HomeAdm/style.css';
+import '../HomeAdm/style.css';
 
 function HomeAdm() {
-
     // Navigate
     const navigate = useNavigate();
 
@@ -51,7 +49,7 @@ function HomeAdm() {
                                 <Card.Text>
                                     Exiba aqui a lista de alunos cadastrados.
                                 </Card.Text>
-                                <Button variant="primary" onClick={() => handleNavigate('/alunos')}>Ver Detalhes</Button>
+                                <Button variant="primary" onClick={() => handleNavigate('/alunosCadastrados')}>Ver Detalhes</Button>
                             </Card.Body>
                         </Card>
                     </Col>
