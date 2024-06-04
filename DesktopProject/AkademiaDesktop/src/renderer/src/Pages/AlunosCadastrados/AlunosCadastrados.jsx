@@ -96,7 +96,7 @@ function AlunosCadastrados() {
                             {filteredAlunos.map(aluno => (
                                 <ListGroup.Item key={aluno.id} className="d-flex justify-content-between align-items-center">
                                     <div>
-                                        {aluno.nome} - <small>Pagamento: {aluno.pagamento}</small>
+                                        {aluno.nome} - <small>Último Pagamento: {aluno.pagamento}</small>
                                     </div>
                                     <div>
                                         <Button variant="warning" className="me-2" onClick={() => handleEdit(aluno)}>Editar</Button>
