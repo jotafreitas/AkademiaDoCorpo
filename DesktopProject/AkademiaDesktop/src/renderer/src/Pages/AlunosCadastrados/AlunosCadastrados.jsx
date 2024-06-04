@@ -8,9 +8,9 @@ function AlunosCadastrados() {
 
     // Estado para armazenar os alunos
     const [alunos, setAlunos] = useState([
-        { id: 1, nome: 'João Silva', vencimento: '2024-06-10' },
-        { id: 2, nome: 'Maria Oliveira', vencimento: '2024-06-15' },
-        { id: 3, nome: 'Pedro Santos', vencimento: '2024-06-20' }
+        { id: 1, nome: 'João Silva', pagamento: '2024-06-10' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 3, nome: 'Pedro Santos', pagamento: '2024-06-20' }
     ]);
 
     // Estado para o modal de confirmação de exclusão
@@ -18,7 +18,7 @@ function AlunosCadastrados() {
     const [showAddModal, setShowAddModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [alunoToDelete, setAlunoToDelete] = useState(null);
-    const [currentAluno, setCurrentAluno] = useState({ id: '', nome: '', vencimento: '' });
+    const [currentAluno, setCurrentAluno] = useState({ id: '', nome: '', pagamento: '' });
     const [searchTerm, setSearchTerm] = useState('');
 
     // Função para editar aluno
@@ -41,14 +41,14 @@ function AlunosCadastrados() {
 
     // Função para adicionar aluno
     const handleAddAluno = () => {
-        setCurrentAluno({ id: '', nome: '', vencimento: '' });
+        setCurrentAluno({ id: '', nome: '', pagamento: '' });
         setShowAddModal(true);
     };
 
     // Função para salvar novo aluno
     const handleSaveAluno = () => {
         const newId = alunos.length ? alunos[alunos.length - 1].id + 1 : 1;
-        setAlunos([...alunos, { id: newId, nome: currentAluno.nome, vencimento: currentAluno.vencimento }]);
+        setAlunos([...alunos, { id: newId, nome: currentAluno.nome, pagamento: currentAluno.pagamento }]);
         setShowAddModal(false);
     };
 
@@ -96,7 +96,7 @@ function AlunosCadastrados() {
                             {filteredAlunos.map(aluno => (
                                 <ListGroup.Item key={aluno.id} className="d-flex justify-content-between align-items-center">
                                     <div>
-                                        {aluno.nome} - <small>Vencimento: {aluno.vencimento}</small>
+                                        {aluno.nome} - <small>Pagamento: {aluno.pagamento}</small>
                                     </div>
                                     <div>
                                         <Button variant="warning" className="me-2" onClick={() => handleEdit(aluno)}>Editar</Button>
@@ -135,12 +135,12 @@ function AlunosCadastrados() {
                                 onChange={(e) => setCurrentAluno({ ...currentAluno, nome: e.target.value })}
                             />
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formAlunoVencimento">
-                            <Form.Label>Data de Vencimento</Form.Label>
+                        <Form.Group className="mb-3" controlId="formAlunoPagamento">
+                            <Form.Label>Data de Pagamento</Form.Label>
                             <Form.Control
                                 type="date"
-                                value={currentAluno.vencimento}
-                                onChange={(e) => setCurrentAluno({ ...currentAluno, vencimento: e.target.value })}
+                                value={currentAluno.pagamento}
+                                onChange={(e) => setCurrentAluno({ ...currentAluno, pagamento: e.target.value })}
                             />
                         </Form.Group>
                     </Form>
@@ -166,12 +166,12 @@ function AlunosCadastrados() {
                                 onChange={(e) => setCurrentAluno({ ...currentAluno, nome: e.target.value })}
                             />
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formAlunoVencimento">
-                            <Form.Label>Data de Vencimento</Form.Label>
+                        <Form.Group className="mb-3" controlId="formAlunoPagamento">
+                            <Form.Label>Data de Pagamento</Form.Label>
                             <Form.Control
                                 type="date"
-                                value={currentAluno.vencimento}
-                                onChange={(e) => setCurrentAluno({ ...currentAluno, vencimento: e.target.value })}
+                                value={currentAluno.pagamento}
+                                onChange={(e) => setCurrentAluno({ ...currentAluno, pagamento: e.target.value })}
                             />
                         </Form.Group>
                     </Form>
