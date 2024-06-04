@@ -16,13 +16,14 @@ function AlunosCadastrados() {
     // Estado para o modal de confirmação de exclusão
     const [showModal, setShowModal] = useState(false);
     const [showAddModal, setShowAddModal] = useState(false);
+    const [showEditModal, setShowEditModal] = useState(false);
     const [alunoToDelete, setAlunoToDelete] = useState(null);
-    const [newAluno, setNewAluno] = useState({ nome: '', vencimento: '' });
+    const [currentAluno, setCurrentAluno] = useState({ id: '', nome: '', vencimento: '' });
 
     // Função para editar aluno
-    const handleEdit = (id) => {
-        // Lógica para editar o aluno
-        console.log(`Editar aluno com ID: ${id}`);
+    const handleEdit = (aluno) => {
+        setCurrentAluno(aluno);
+        setShowEditModal(true);
     };
 
     // Função para excluir aluno
@@ -39,14 +40,21 @@ function AlunosCadastrados() {
 
     // Função para adicionar aluno
     const handleAddAluno = () => {
-        setNewAluno({ nome: '', vencimento: '' });
+        setCurrentAluno({ id: '', nome: '', vencimento: '' });
         setShowAddModal(true);
     };
 
+    // Função para salvar novo aluno
     const handleSaveAluno = () => {
         const newId = alunos.length ? alunos[alunos.length - 1].id + 1 : 1;
-        setAlunos([...alunos, { id: newId, nome: newAluno.nome, vencimento: newAluno.vencimento }]);
+        setAlunos([...alunos, { id: newId, nome: currentAluno.nome, vencimento: currentAluno.vencimento }]);
         setShowAddModal(false);
+    };
+
+    // Função para salvar edição do aluno
+    const handleSaveEditAluno = () => {
+        setAlunos(alunos.map(aluno => aluno.id === currentAluno.id ? currentAluno : aluno));
+        setShowEditModal(false);
     };
 
     return (
@@ -76,7 +84,7 @@ function AlunosCadastrados() {
                                         {aluno.nome} - <small>Vencimento: {aluno.vencimento}</small>
                                     </div>
                                     <div>
-                                        <Button variant="warning" className="me-2" onClick={() => handleEdit(aluno.id)}>Editar</Button>
+                                        <Button variant="warning" className="me-2" onClick={() => handleEdit(aluno)}>Editar</Button>
                                         <Button variant="danger" onClick={() => handleDelete(aluno.id)}>Excluir</Button>
                                     </div>
                                 </ListGroup.Item>
@@ -108,16 +116,16 @@ function AlunosCadastrados() {
                             <Form.Control
                                 type="text"
                                 placeholder="Digite o nome do aluno"
-                                value={newAluno.nome}
-                                onChange={(e) => setNewAluno({ ...newAluno, nome: e.target.value })}
+                                value={currentAluno.nome}
+                                onChange={(e) => setCurrentAluno({ ...currentAluno, nome: e.target.value })}
                             />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formAlunoVencimento">
                             <Form.Label>Data de Vencimento</Form.Label>
                             <Form.Control
                                 type="date"
-                                value={newAluno.vencimento}
-                                onChange={(e) => setNewAluno({ ...newAluno, vencimento: e.target.value })}
+                                value={currentAluno.vencimento}
+                                onChange={(e) => setCurrentAluno({ ...currentAluno, vencimento: e.target.value })}
                             />
                         </Form.Group>
                     </Form>
@@ -125,6 +133,37 @@ function AlunosCadastrados() {
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => setShowAddModal(false)}>Cancelar</Button>
                     <Button variant="primary" onClick={handleSaveAluno}>Salvar</Button>
+                </Modal.Footer>
+            </Modal>
+
+            <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Editar Aluno</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Group className="mb-3" controlId="formAlunoNome">
+                            <Form.Label>Nome do Aluno</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Digite o nome do aluno"
+                                value={currentAluno.nome}
+                                onChange={(e) => setCurrentAluno({ ...currentAluno, nome: e.target.value })}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formAlunoVencimento">
+                            <Form.Label>Data de Vencimento</Form.Label>
+                            <Form.Control
+                                type="date"
+                                value={currentAluno.vencimento}
+                                onChange={(e) => setCurrentAluno({ ...currentAluno, vencimento: e.target.value })}
+                            />
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowEditModal(false)}>Cancelar</Button>
+                    <Button variant="primary" onClick={handleSaveEditAluno}>Salvar</Button>
                 </Modal.Footer>
             </Modal>
         </div>
