@@ -72,7 +72,7 @@ function AlunosCadastrados() {
                 </Row>
                 <Row className="mb-4">
                     <Col className="text-end">
-                        <Button variant="success" onClick={handleAddAluno}>+</Button>
+                        <Button variant="warning" onClick={handleAddAluno}>Novo Aluno</Button>
                     </Col>
                 </Row>
                 <Row>
