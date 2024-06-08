@@ -1,18 +1,11 @@
-// React
-import { useNavigate, Link } from 'react-router-dom'
-
-// Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-
-// Custom CSS
 import '../HomeAdm/style.css';
 
 function HomeAdm() {
-    // Navigate
     const navigate = useNavigate();
 
-    // Função de navegação para as páginas de cadastro e administrador
     const handleNavigate = (path) => {
         navigate(path);
     };

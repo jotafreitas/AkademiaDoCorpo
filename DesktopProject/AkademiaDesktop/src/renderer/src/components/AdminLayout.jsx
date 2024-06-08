@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import SideBar from './SideBar';
+import SideBar from '../Pages/SideBar/SideBar';
 
-function AdminLayout({ children }) {
+const AdminLayout = ({ children }) => {
     return (
         <Container fluid>
             <Row>
@@ -15,6 +15,6 @@ function AdminLayout({ children }) {
             </Row>
         </Container>
     );
-}
+};
 
 export default AdminLayout;
