@@ -9,7 +9,7 @@
     color: #ffff; /* Cor dos links amarelo */
     font-size: 18px;
     margin: 10px 0;
-    transition: color 0.3s, background-color 0.3s; /* Transição suave */
+    transition: color 0.1s, background-color 0.1s; /* Transição suave */
 }
 
 .sidebar-link:hover {
