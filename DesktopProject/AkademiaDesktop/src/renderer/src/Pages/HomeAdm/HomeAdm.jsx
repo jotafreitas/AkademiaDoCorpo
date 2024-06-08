@@ -13,11 +13,7 @@ function HomeAdm() {
     return (
         <>
             <Container>
-                <Row className="mt-4 mb-4">
-                    <Col>
-                        <Link to="/" relative="path">Back</Link>
-                    </Col>
-                </Row>
+               
                 <Row>
                     <Col>
                         <h1 className="text-center">Dashboard da Academia</h1>
