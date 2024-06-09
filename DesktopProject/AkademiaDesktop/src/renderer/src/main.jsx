@@ -7,6 +7,8 @@ import HomeAdm from './Pages/HomeAdm/HomeAdm';
 import AlunosCadastrados from './Pages/AlunosCadastrados/AlunosCadastrados';
 import AdminLayout from '../src/components/AdminLayout';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import ProximosVencimentos from './Pages/ProximosVencimentos/ProximosVencimentos';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
       {
         path: "alunosCadastrados",
         element: <AdminLayout><AlunosCadastrados /></AdminLayout>
+      },
+      {
+        path: "proximosVencimentos",
+        element: <AdminLayout><ProximosVencimentos /></AdminLayout>
+      },
+      {
+        path: "*",
+        element: <ErrorPage />
       }
     ]
   }

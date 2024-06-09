@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, ListGroup, Button, InputGroup, FormControl, DropdownButton, Dropdown } from 'react-bootstrap';
+import { Container, Row, Col, ListGroup, Button, InputGroup, FormControl, DropdownButton, Dropdown, Modal, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import '../AlunosCadastrados/style.css';
+import '../ProximosVencimentos/style.css';
 
-const alunos = [
-    { id: 1, nome: 'João Silva', pagamento: '2024-06-10' },
-    { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
-    { id: 3, nome: 'Pedro Santos', pagamento: '2024-06-20' }
-];
-
-const ProximosVencimentos = () => {
+function ProximosVencimentos() {
     const navigate = useNavigate();
+
+    // Estado para armazenar os alunos
+    const [alunos, setAlunos] = useState([
+        { id: 1, nome: 'João Silva', pagamento: '2024-06-10' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 3, nome: 'Pedro Santos', pagamento: '2024-06-20' }
+    ]);
+
+    // Estado para o filtro de vencimentos
     const [filter, setFilter] = useState('dia');
     const [searchTerm, setSearchTerm] = useState('');
 
+    // Filtrar alunos com base no filtro de vencimento
     const filterAlunos = (alunos, filter) => {
         const hoje = new Date();
         const dia = 24 * 60 * 60 * 1000;
@@ -53,7 +57,7 @@ const ProximosVencimentos = () => {
                     </Col>
                 </Row>
                 <Row className="mb-4">
-                    <Col md={6}>
+                    <Col md={9}>
                         <InputGroup>
                             <FormControl
                                 placeholder="Pesquisar aluno"
@@ -62,7 +66,7 @@ const ProximosVencimentos = () => {
                             />
                         </InputGroup>
                     </Col>
-                    <Col md={6} className="text-end">
+                    <Col md={3} className="text-end">
                         <DropdownButton
                             id="dropdown-basic-button"
                             title={`Filtrar por: ${filter}`}
@@ -90,6 +94,6 @@ const ProximosVencimentos = () => {
             </Container>
         </div>
     );
-};
+}
 
 export default ProximosVencimentos;
