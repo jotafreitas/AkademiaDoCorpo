@@ -77,11 +77,6 @@ function AlunosCadastrados() {
             <Container className="pt-4 pb-4">
                 <Row className="mb-4">
                     <Col>
-                        <Button variant="danger" onClick={() => navigate(-1)}>Back</Button>
-                    </Col>
-                </Row>
-                <Row className="mb-4">
-                    <Col>
                         <h1 className="text-center">Alunos Cadastrados</h1>
                     </Col>
                 </Row>
@@ -105,7 +100,7 @@ function AlunosCadastrados() {
                             {filteredAlunos.map(aluno => (
                                 <ListGroup.Item key={aluno.id} className="d-flex justify-content-between align-items-center">
                                     <div>
-                                        {aluno.nome} - <small>Último Pagamento: {aluno.pagamento}</small>
+                                        {aluno.nome} - <small>Data de Pagamento: {aluno.pagamento}</small>
                                     </div>
                                     <div>
                                         <Button variant="warning" className="me-2" onClick={() => handleEdit(aluno)}>Editar</Button>
