@@ -10,6 +10,15 @@ function AlunosCadastrados() {
     const [alunos, setAlunos] = useState([
         { id: 1, nome: 'João Silva', pagamento: '2024-06-10' },
         { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
         { id: 3, nome: 'Pedro Santos', pagamento: '2024-06-20' }
     ]);
 

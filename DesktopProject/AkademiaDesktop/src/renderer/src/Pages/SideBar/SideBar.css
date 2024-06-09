@@ -1,8 +1,13 @@
 .sidebar {
-    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px; /* Ajuste a largura conforme necessário */
     border-right: 1px solid #ffd700; /* Borda amarela */
     padding: 20px;
     background-color: #000000; /* Fundo preto */
+    overflow-y: auto; /* Permite a rolagem se o conteúdo for maior que a tela */
 }
 
 .sidebar-link {
