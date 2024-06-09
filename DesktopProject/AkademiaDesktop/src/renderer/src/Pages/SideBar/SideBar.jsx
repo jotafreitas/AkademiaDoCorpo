@@ -14,14 +14,28 @@ const Sidebar = () => {
                 to="/homeAdm"
                 className={`sidebar-link ${location.pathname === '/homeAdm' ? 'active' : ''}`}
             >
-                Dashboard
+                Início
             </Nav.Link>
             <Nav.Link
                 as={Link}
                 to="/alunosCadastrados"
                 className={`sidebar-link ${location.pathname === '/alunosCadastrados' ? 'active' : ''}`}
             >
-                Alunos Cadastrados
+                Alunos
+            </Nav.Link>
+            <Nav.Link
+                as={Link}
+                to="/"
+                className={`sidebar-link ${location.pathname === '/' ? 'active' : ''}`}
+            >
+                Vencimentos
+            </Nav.Link>
+            <Nav.Link
+                as={Link}
+                to="/"
+                className={`sidebar-link ${location.pathname === '/' ? 'active' : ''}`}
+            >
+                Chefe
             </Nav.Link>
             <Nav.Link
                 as={Link}
