@@ -47,9 +47,9 @@ function HomeAdm() {
                             <Card.Body>
                                 <Card.Title>Próximos Vencimentos</Card.Title>
                                 <Card.Text>
-                                    Exiba aqui os próximos vencimentos das mensalidades.
+                                    Exiba aqui os próximos vencimentos das mensalidadesss.
                                 </Card.Text>
-                                <Button variant="primary" onClick={() => handleNavigate('/vencimentos')}>Ver Detalhes</Button>
+                                <Button variant="primary" onClick={() => handleNavigate('/proximosVencimentos')}>Ver Detalhes</Button>
                             </Card.Body>
                         </Card>
                     </Col>

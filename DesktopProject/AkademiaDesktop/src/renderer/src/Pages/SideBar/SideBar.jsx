@@ -25,8 +25,8 @@ const Sidebar = () => {
             </Nav.Link>
             <Nav.Link
                 as={Link}
-                to="/"
-                className={`sidebar-link ${location.pathname === '/' ? 'active' : ''}`}
+                to="/proximosVencimentos"
+                className={`sidebar-link ${location.pathname === '/proximosVencimentos' ? 'active' : ''}`}
             >
                 Vencimentos
             </Nav.Link>
