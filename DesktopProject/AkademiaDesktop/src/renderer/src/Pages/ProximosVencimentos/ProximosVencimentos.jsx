@@ -48,11 +48,6 @@ function ProximosVencimentos() {
             <Container className="pt-4 pb-4">
                 <Row className="mb-4">
                     <Col>
-                        <Button variant="danger" onClick={() => navigate(-1)}>Back</Button>
-                    </Col>
-                </Row>
-                <Row className="mb-4">
-                    <Col>
                         <h1 className="text-center">Próximos Vencimentos</h1>
                     </Col>
                 </Row>
