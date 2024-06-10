@@ -1,0 +1,30 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px; /* Ajuste a largura conforme necessário */
+    border-right: 1px solid #ffd700; /* Borda amarela */
+    padding: 20px;
+    background-color: #000000; /* Fundo preto */
+    overflow-y: auto; /* Permite a rolagem se o conteúdo for maior que a tela */
+}
+
+.sidebar-link {
+    color: #ffff; /* Cor dos links amarelo */
+    font-size: 18px;
+    margin: 10px 0;
+    transition: color 0.1s, background-color 0.1s; /* Transição suave */
+}
+
+.sidebar-link:hover {
+    color: #000000; /* Cor ao passar o mouse */
+    background-color: #ffd700; /* Fundo ao passar o mouse */
+    padding-left: 10px; /* Leve indentação ao passar o mouse */
+}
+
+.sidebar-link.active {
+    color: #000000; /* Cor do texto quando ativo */
+    background-color: #ffd700; /* Fundo quando ativo */
+    padding-left: 10px; /* Leve indentação */
+}

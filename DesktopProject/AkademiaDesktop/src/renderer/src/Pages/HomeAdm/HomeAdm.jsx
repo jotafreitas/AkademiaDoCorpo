@@ -1,18 +1,11 @@
-// React
-import { useNavigate, Link } from 'react-router-dom'
-
-// Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-
-// Custom CSS
 import '../HomeAdm/style.css';
 
 function HomeAdm() {
-    // Navigate
     const navigate = useNavigate();
 
-    // Função de navegação para as páginas de cadastro e administrador
     const handleNavigate = (path) => {
         navigate(path);
     };
@@ -20,11 +13,7 @@ function HomeAdm() {
     return (
         <>
             <Container>
-                <Row className="mt-4 mb-4">
-                    <Col>
-                        <Link to="/" relative="path">Back</Link>
-                    </Col>
-                </Row>
+               
                 <Row>
                     <Col>
                         <h1 className="text-center">Dashboard da Academia</h1>
@@ -58,9 +47,9 @@ function HomeAdm() {
                             <Card.Body>
                                 <Card.Title>Próximos Vencimentos</Card.Title>
                                 <Card.Text>
-                                    Exiba aqui os próximos vencimentos das mensalidades.
+                                    Exiba aqui os próximos vencimentos das mensalidadesss.
                                 </Card.Text>
-                                <Button variant="primary" onClick={() => handleNavigate('/vencimentos')}>Ver Detalhes</Button>
+                                <Button variant="primary" onClick={() => handleNavigate('/proximosVencimentos')}>Ver Detalhes</Button>
                             </Card.Body>
                         </Card>
                     </Col>

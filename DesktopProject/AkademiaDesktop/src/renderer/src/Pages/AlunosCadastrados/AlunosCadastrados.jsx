@@ -10,6 +10,15 @@ function AlunosCadastrados() {
     const [alunos, setAlunos] = useState([
         { id: 1, nome: 'João Silva', pagamento: '2024-06-10' },
         { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
+        { id: 2, nome: 'Maria Oliveira', pagamento: '2024-06-15' },
         { id: 3, nome: 'Pedro Santos', pagamento: '2024-06-20' }
     ]);
 
@@ -68,11 +77,6 @@ function AlunosCadastrados() {
             <Container className="pt-4 pb-4">
                 <Row className="mb-4">
                     <Col>
-                        <Button variant="danger" onClick={() => navigate(-1)}>Back</Button>
-                    </Col>
-                </Row>
-                <Row className="mb-4">
-                    <Col>
                         <h1 className="text-center">Alunos Cadastrados</h1>
                     </Col>
                 </Row>
@@ -96,7 +100,7 @@ function AlunosCadastrados() {
                             {filteredAlunos.map(aluno => (
                                 <ListGroup.Item key={aluno.id} className="d-flex justify-content-between align-items-center">
                                     <div>
-                                        {aluno.nome} - <small>Último Pagamento: {aluno.pagamento}</small>
+                                        {aluno.nome} - <small>Data de Pagamento: {aluno.pagamento}</small>
                                     </div>
                                     <div>
                                         <Button variant="warning" className="me-2" onClick={() => handleEdit(aluno)}>Editar</Button>
