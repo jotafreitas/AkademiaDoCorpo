@@ -42,13 +42,16 @@ function Login() {
     const forgotPassword = () => {
         return navigate("forgotPassword")
     }
-                    
+    const home = () => {
+      return navigate("homeAdm")
+  }                
+
   function VerifyUser(){
     var newUserEmail = userEmail.replace(/[@.]/g, '')
     if(User[newUserEmail]){
       if(User[newUserEmail].password == userPassword){
         setLoginError(false)
-        useNavigate('/Home', {replace: true})
+        home()
       }
       else{
         setLoginError(true)

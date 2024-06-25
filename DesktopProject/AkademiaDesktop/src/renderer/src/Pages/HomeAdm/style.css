@@ -1,0 +1,59 @@
+/* Definição das cores */
+:root {
+    --primary-color: #FFC107; /* Amarelo */
+    --secondary-color: #000000; /* Preto */
+    --background-color: #FFFFFF; /* Branco */
+}
+
+/* Estilização geral */
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+/* Estilização do link de volta */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Estilização dos cartões do dashboard */
+.card {
+    border: 1px solid var(--primary-color);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.card-title {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.card-text {
+    color: var(--secondary-color);
+}
+
+/* Estilização dos botões */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--secondary-color);
+}
